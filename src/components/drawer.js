@@ -7,7 +7,8 @@ export const AppDrawer = (props) => {
 
     return (
         <Drawer open={props.open}
-                onClose={ open => props.onToggle(open)}
+                onClose={ open => props.onToggle(open )}
+
 
 
                     >

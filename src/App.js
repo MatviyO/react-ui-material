@@ -19,7 +19,7 @@ export default class App extends Component {
                 onLeftIconClick={() => this.setState({isDrawerOpen: true})}
             />
             <AppDrawer  open={this.state.isDrawerOpen}
-                       onToggle={(isDrawerOpen) => this.setState({isDrawerOpen})}
+                       onToggle={(isDrawerOpen) => this.setState({isDrawerOpen: false})}
             />
         </div>
     );
