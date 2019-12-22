@@ -1,33 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
-import Button from '@material-ui/core/Button';
+import {AppHeader} from './components/header';
+import {AppDrawer} from "./components/drawer";
 
+export default class App extends Component {
+    constructor(probs)
+    {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-
-          <Button variant="contained" color="primary">
-            Hello World
-          </Button>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-
-      </header>
-    </div>
-  );
+        super(probs)
+        this.state = {
+            isDrawerOpen: false
+        }
+    }
+    render() {
+    return (
+        <div className="App" >
+            <AppHeader
+                onLeftIconClick={() => this.setState({isDrawerOpen: true})}
+            />
+            <AppDrawer  open={this.state.isDrawerOpen}
+                       onToggle={(isDrawerOpen) => this.setState({isDrawerOpen})}
+            />
+        </div>
+    );
 }
 
-export default App;
+
+}
+
