@@ -2,6 +2,7 @@ import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import MenuItem from '@material-ui/core/MenuItem';
 import SvgIcon from '@material-ui/core/SvgIcon';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 export const AppDrawer = (props) => {
 
@@ -12,9 +13,14 @@ export const AppDrawer = (props) => {
 
 
                     >
-            <MenuItem><SvgIcon {...props}>
-                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-            </SvgIcon> Home</MenuItem>
+            <MenuItem>
+                <ListItemIcon>
+                    <SvgIcon {...props}>
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                    </SvgIcon>
+                </ListItemIcon>
+
+                Home</MenuItem>
             <MenuItem>Contact</MenuItem>
         </Drawer>
     )
