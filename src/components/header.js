@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export  const AppHeader = (props) => {
+export const AppHeader = (props) => {
     const classes = useStyles();
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -49,17 +49,18 @@ export  const AppHeader = (props) => {
         <div className={classes.root}>
             <FormGroup>
                 <FormControlLabel
-                    control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
+                    control={<Switch checked={auth} onChange={handleChange} aria-label="login switch"/>}
                     label={auth ? 'Logout' : 'LogonLeftIconButtonTouchTapin'}
                 />
             </FormGroup>
             <AppBar position="static"
-                    onClick  ={() => {
+                    onClick={() => {
 
-                        props.onLeftIconClick()}}>
+                        props.onLeftIconClick()
+                    }}>
                 <Toolbar>
-                    <IconButton  edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuIcon />
+                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <MenuIcon/>
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
                         React
@@ -73,7 +74,7 @@ export  const AppHeader = (props) => {
                                 onClick={handleMenu}
                                 color="inherit"
                             >
-                                <MoreIcon />
+                                <MoreIcon/>
                             </IconButton>
                             <Menu
                                 id="menu-appbar"
