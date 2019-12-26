@@ -13,7 +13,12 @@ export const AppButtons = (props) => {
         <div style={{marginBottom: 40}}>
             <Button
                 startIcon={<AddIcon/>}
-                variant="contained" color="primary" style={st}>
+                variant="contained" color="primary" style={st}
+                onClick={ (e) => {
+                    props.onAdd(e.currentTarget)
+                }}
+
+            >
                 Add
             </Button>
 
@@ -23,7 +28,7 @@ export const AppButtons = (props) => {
                 startIcon={<DeleteIcon/>}
                 style={st}
                 disabled={props.itemsChecked.length === 0}
-
+                onClick={ () => props.onDelete()}
             >
                 Delete
             </Button>
