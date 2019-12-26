@@ -6,14 +6,14 @@ import {AppButtons} from "./components/button";
 import {AppList} from "./components/list";
 
 export default class App extends Component {
-    constructor(probs) {
-        super(probs)
+    constructor(props) {
+        super(props)
         this.state = {
             isDrawerOpen: false,
             itemsList: [
-                { name: 'Element 1', description: 'Description', cheked: false},
-                { name: 'Element 2', description: 'Description2', cheked: false},
-                { name: 'Element 3', description: 'Description3', cheked: false}
+                { name: 'Element 1', description: 'Description', checked: false},
+                { name: 'Element 2', description: 'Description2', checked: false},
+                { name: 'Element 3', description: 'Description3', checked: false}
             ]
         }
     }
@@ -28,19 +28,21 @@ export default class App extends Component {
                            onToggle={(isDrawerOpen) => this.setState({isDrawerOpen: false})}
                 />
                 <div className="container">
+
                     <AppButtons
-                        itemsCheked={this.state.itemsList.map(i => i.cheked).filter(i => i)}
-                        onDelete={() => [
-                            
-                        ]}
+                        itemsChecked={this.state.itemsList.map(i => i.checked).filter(i => i)}
+
                     />
+
                     <AppList
                         items={this.state.itemsList}
-                        onCheck={(cheked,idx) => {
+                        onChange={(checked,idx) => {
                             let {itemsList} = this.state
-                            itemsList[idx].cheked = cheked
+                            itemsList[idx].checked = checked
+                            this.setState({itemsList})
                         }}
                     />
+
                 </div>
             </div>
         );

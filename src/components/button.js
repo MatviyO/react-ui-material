@@ -22,16 +22,13 @@ export const AppButtons = (props) => {
                 color="secondary"
                 startIcon={<DeleteIcon/>}
                 style={st}
-                disabled={props.itemsCheked.length === 0}
-                onClickAway ={ () => {
-                    console.log('click')
-                    props.onDelete()
-                }}
+                disabled={props.itemsChecked.length === 0}
+
             >
                 Delete
             </Button>
 
-            <Button variant="contained" color="teal" target="blank"
+            <Button variant="contained" color="secondary" target="blank"
                     href="https://google.com" style={st}
             >
                 <TelegramIcon/>
