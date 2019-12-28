@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from "@material-ui/core/Button";
 import styled from 'styled-components';
-import { TextField, NoSsr } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
 
 const StyledTextField = styled(TextField)`
   label.Mui-focused {
@@ -36,27 +36,26 @@ export class AppForm extends React.Component{
     render() {
         return(
             <div className="ff">
-
-
                     <StyledTextField
                         onChange={ (e, name ) => {
+                            name = e.target.value
                             this.setState({ name})
-                            console.log(name)
+
                         }}
-
                         label="Name" variant="outlined"  />
-
 
                     <StyledTextField
                         onChange={ (e, description ) => {
+                            description = e.target.value
                             this.setState({ description})
-                            console.log(description)
+
                         }}
 
                         label="Description" variant="outlined"  />
 
                 <Button
                     onClick={ this.onAdd.bind(this)
+
                     }
                     className="button"> Send</Button>
             </div>

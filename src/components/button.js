@@ -44,7 +44,8 @@ export const AppButtons = (props) => {
                 position: 'fixed',
                 right: 50,
                 bottom: 50
-            }}>
+            }}
+            onClick={() => props.openModal()}>
                 <AddIcon/>
             </Fab>
 
